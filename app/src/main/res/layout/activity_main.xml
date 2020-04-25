@@ -15,13 +15,14 @@
 <!--        android:src=""-->
 <!--        ></ImageView>-->
 
+
     <TextView
         android:id="@+id/SplashText"
         android:layout_width="195dp"
         android:layout_height="53dp"
         android:fontFamily="sans-serif-condensed-medium"
-        android:text="StudySmart"
-        android:textSize="40sp"
+        android:text="@string/app_name"
+        android:textSize="41sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
