@@ -2,5 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/libs/AlarmReminder" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/libs/CircleSeekbar" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/libs/Reminders" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/libs/Scheduling-App" vcs="Git" />
   </component>
 </project>
