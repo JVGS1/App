@@ -6,7 +6,6 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.widget.Toast
-import com.example.app.reminders
 
 
 const val DB_Name = "StudySmartDB"
@@ -56,9 +55,9 @@ class sqlDatahandler(var context: Context): SQLiteOpenHelper(context, DB_Name, n
     }
 
 
-    fun deleteReminder(reminders: Reminders) {
+        fun deleteReminder(ID: String) {
         val database = this.writableDatabase
-        database.delete(ReminderDB, "$colID=?", arrayOf(reminders.ID.toString()))
+        database.delete(ReminderDB, "$colID=?", arrayOf(colID))
         database.close()
     }
 

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">StudySmart</string>
+    <string name="date">24 april</string>
+    <string name="time">8:00AM</string>
 </resources>
