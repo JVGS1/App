@@ -10,13 +10,11 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.app.main.MainPresenterImpl
 
 class MainActivity : AppCompatActivity() {
 
     //Variables for animation
-
-
-
     private lateinit var image:ImageView
 
     private lateinit var logo:TextView
@@ -44,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         appName.setAnimation(topAnim)
 
         Handler().postDelayed({
-            val intent = Intent(this, reminders::class.java)
+            val intent = Intent(this, MainPresenterImpl::class.java)
             startActivity(intent)
             finish()
         }, 3000)

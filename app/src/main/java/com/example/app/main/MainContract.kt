@@ -12,7 +12,7 @@ interface MainContract {
 
     interface Presenter : MvpPresenter
 
-    fun createReminder()
 
+    interface reminderPresenter : MvpPresenter.reminder
 
 }

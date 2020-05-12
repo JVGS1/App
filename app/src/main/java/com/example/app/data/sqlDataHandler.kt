@@ -17,19 +17,21 @@ const val DB_Version = 1
 class sqlDatahandler(var context: Context): SQLiteOpenHelper(context, DB_Name, null, DB_Version) {
 
     private val ReminderDB = "Reminders"
-    private val colID = "id"
-    private val colDate = "date" //Date
-    private val colTime = "time" // Time
-    private val colText = "text" // Text
+    private val colID = "_id"
+    private val colDate = "_date" //Date
+    private val colTime = "_time" // Time
+    private val colText = "_text" // Text
+
+
 
     override fun onCreate(db: SQLiteDatabase?) {
-        val createScheduleTable: String =
-            "CREATE TABLE $ReminderDB (" +
+        val createScheduleTable: String = "CREATE TABLE $ReminderDB (" +
                     "$colID INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "$colDate VARCHAR(256)," +
                     "$colTime VARCHAR(256)," +
-                    "$colText VARCHAR(256),"
+                    "$colText VARCHAR(256));"
         db?.execSQL(createScheduleTable)
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
@@ -57,7 +59,7 @@ class sqlDatahandler(var context: Context): SQLiteOpenHelper(context, DB_Name, n
 
         fun deleteReminder(ID: String) {
         val database = this.writableDatabase
-        database.delete(ReminderDB, "$colID=?", arrayOf(colID))
+        database.delete(ReminderDB, "$colID=?", arrayOf(ID))
         database.close()
     }
 
@@ -71,7 +73,7 @@ class sqlDatahandler(var context: Context): SQLiteOpenHelper(context, DB_Name, n
         database.close()
     }
 
-    fun checkReminder(): MutableList<Reminders> {
+    fun readReminders(): MutableList<Reminders> {
         var list: MutableList<Reminders> = ArrayList()
         val database = this.writableDatabase
         val query: Cursor = database.rawQuery("Select * from $ReminderDB", null)
@@ -84,7 +86,6 @@ class sqlDatahandler(var context: Context): SQLiteOpenHelper(context, DB_Name, n
             reminder.text = query.getString(query.getColumnIndex(colText))
             list.add(reminder)
             query.moveToNext()
-
         }
 
     }
@@ -92,5 +93,9 @@ class sqlDatahandler(var context: Context): SQLiteOpenHelper(context, DB_Name, n
     query.close()
     return list
 }
+
+    fun getSize(): Int {
+        return readReminders().size -1
+    }
 
 }
