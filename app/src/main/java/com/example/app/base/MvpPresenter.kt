@@ -1,6 +1,7 @@
 package com.example.app.base
 
 
+import android.view.View
 import com.example.app.data.Reminders
 
 interface MvpPresenter {
@@ -8,9 +9,13 @@ interface MvpPresenter {
     interface reminder{
         fun updateReminders(reminders: Reminders)
 
-        fun refresh()
+        fun refreshList()
 
-        fun notification(reminders: Reminders)
+        fun createReminder(view: View)
+
+        fun notifReminder(string: String, setTime: Long)
+
+        fun deleteReminder(reminderID: String)
     }
 
 

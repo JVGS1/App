@@ -18,11 +18,11 @@
 
     <TextView
         android:id="@+id/SplashText"
-        android:layout_width="195dp"
-        android:layout_height="53dp"
+        android:layout_width="155dp"
+        android:layout_height="54dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="@string/app_name"
-        android:textSize="41sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

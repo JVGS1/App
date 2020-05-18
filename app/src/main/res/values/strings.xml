@@ -2,4 +2,7 @@
     <string name="app_name">StudySmart</string>
     <string name="date">24 april</string>
     <string name="time">8:00AM</string>
+    <string name="reminders">Reminders</string>
+    <string name="reminder">Reminder</string>
+    <string name="times">Time</string>
 </resources>

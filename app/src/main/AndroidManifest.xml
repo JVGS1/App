@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".reminders"></activity>
+        <activity android:name=".reminders" />
         <activity android:name=".MainActivity">
 
             <intent-filter>
@@ -19,6 +19,14 @@
         </activity>
         <activity android:name="com.example.app.main.MainPresenterImpl">
         </activity>
+
+        <receiver android:name="com.example.app.main.BC">
+            <intent-filter>
+                <action android:name="android.media.action.DISPLAY_NOTIFICATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
 
     </application>
 

@@ -7,22 +7,18 @@ import android.content.Intent
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Build
+import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.example.app.R
 
 class BC: BroadcastReceiver() {
 
-
-
-
-    //        private var ID ""
-
-
     override fun onReceive(context: Context?, intent: Intent?) {
         var nChannel : NotificationChannel
         var nBuilder : NotificationCompat.Builder
         var nManager : NotificationManager
+
 
         val intent = Intent(context, LauncherActivity::class.java)
         val pIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
@@ -77,15 +73,6 @@ class BC: BroadcastReceiver() {
             }
 
         }
-
-
-
-
-
-
-
-
-        TODO("Not yet implemented")
     }
 
 }
