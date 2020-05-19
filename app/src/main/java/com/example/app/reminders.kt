@@ -22,32 +22,7 @@ class reminders : AppCompatActivity() {
         )
         setContentView(R.layout.activity_reminders)
 
-//        slider = findViewById<SeekBar>(R.id.timeSlider)
-//
-//        value = findViewById<TextView>(R.id.studyTime)
-//
-//
-//        slider.max = 24
-//
-//        slider.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
-//
-//            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-//                value.text = progress.toString()
-//            }
-//
-//            override fun onStartTrackingTouch(seekBar: SeekBar?) {
-//                if (seekBar != null) {
-//                    value.text = seekBar.progress.toString()
-//                }
-//            }
-//
-//            override fun onStopTrackingTouch(seekBar: SeekBar?) {
-//                if (seekBar != null) {
-//                    value.text = seekBar.progress.toString()
-//                }
-//            }
-//
-//        })
+
 
 
     }

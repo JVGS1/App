@@ -14,9 +14,8 @@ import com.example.app.main.MainPresenterImpl
 
 class MainActivity : AppCompatActivity() {
 
-    //Variables for animation
-    private lateinit var image:ImageView
 
+    private lateinit var image:ImageView
     private lateinit var logo:TextView
     private lateinit var appName:TextView
 

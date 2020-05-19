@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.agilie:circular-picker:1.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d70f1b6ca515878c71ec471e897c9ac1/jetified-circular-picker-1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d70f1b6ca515878c71ec471e897c9ac1/jetified-circular-picker-1.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.agilie/circular-picker/1.0/d0bcf07c288d2e646e25c878a195b84d6061a018/circular-picker-1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.agilie/circular-picker/1.0/f60dd1ee48ff04d268d9655aa2864f7a0d59818f/circular-picker-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -18,5 +18,15 @@ interface MvpPresenter {
         fun deleteReminder(reminderID: String)
     }
 
+    interface Stats {
+            fun setGoals()
 
-}
+            fun getGoals()
+
+            fun chartView()
+
+            fun currentProgression()
+        }
+    }
+
+

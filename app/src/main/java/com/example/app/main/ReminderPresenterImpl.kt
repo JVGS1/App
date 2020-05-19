@@ -62,11 +62,12 @@ class MainPresenterImpl : MainContract.reminderPresenter, AppCompatActivity() {
 
         aManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
-        val view = layoutInflater.inflate(R.layout.add_reminder_activity, null)
-
+//        val view = layoutInflater.inflate(R.layout.add_reminder_activity, null)
+        val view = View.inflate(context, R.layout.add_reminder_activity,  null)
 
         floatingActionButton.setOnClickListener {
             createReminder(view)
+
         }
     }
 
@@ -86,13 +87,12 @@ class MainPresenterImpl : MainContract.reminderPresenter, AppCompatActivity() {
         dialog.show()
         dialog.setCancelable(true)
 
-         //
+
          dialog.setInverseBackgroundForced(true)
 
 
-
          calendarView(view)
-        timeView(view)
+         timeView(view)
 
 
 
@@ -124,15 +124,11 @@ class MainPresenterImpl : MainContract.reminderPresenter, AppCompatActivity() {
 
 
 
-
-
-
-
      override fun notifReminder(string: String, setTime: Long) {
 
 
         val intent = Intent(context, BC::class.java)
-        intent.putExtra("Reminder: ", string)
+        intent.putExtra("Reminder", string)
         val pIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
         aManager.set(AlarmManager.RTC_WAKEUP, setTime, pIntent)
     }
@@ -148,7 +144,8 @@ class MainPresenterImpl : MainContract.reminderPresenter, AppCompatActivity() {
         val alert = AlertDialog.Builder(this).create()
 
         alert.setTitle("Update Reminder")
-        val view = layoutInflater.inflate(R.layout.add_reminder_activity, null)
+        val view = View.inflate(context, R.layout.add_reminder_activity,  null)
+
 
         if (view.parent != null) {
             (view.parent as? ViewGroup)?.removeView(view)
@@ -221,6 +218,9 @@ class MainPresenterImpl : MainContract.reminderPresenter, AppCompatActivity() {
             dpd.show()
         }
     }
+
+
+
 
 
     fun timeView(view: View) {

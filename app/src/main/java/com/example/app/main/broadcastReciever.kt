@@ -20,9 +20,9 @@ class BC: BroadcastReceiver() {
         var nManager : NotificationManager
 
 
-        val intent = Intent(context, LauncherActivity::class.java)
-        val pIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
-        var desc = intent?.getStringExtra("Description")
+        val cIntent = Intent(context, LauncherActivity::class.java)
+        val pIntent = PendingIntent.getActivity(context, 0, cIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+        var desc = intent?.getStringExtra("Reminder")
         if (context != null) {
             nManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             if (context != null) {
@@ -30,6 +30,9 @@ class BC: BroadcastReceiver() {
             }
 
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ){
+
+                Log.d("Test", "if statement 1")
+
 
                 nChannel = NotificationChannel(
                     "package com.example.app",
@@ -42,19 +45,25 @@ class BC: BroadcastReceiver() {
 
                 if(context != null) {
                     nBuilder = NotificationCompat.Builder(context, "package com.example.app")
-                        .setContentTitle("StudySmart")
+                        .setContentTitle("StudySmart A")
                         .setContentText(desc)
                         .setLargeIcon(BitmapFactory.decodeResource(context?.resources, R.drawable.ic_launcher_foreground))
                         .setSmallIcon(R.drawable.clock_icon)
                         .setContentIntent(pIntent)
 
+                    Log.d("Test", "If statement 2 ")
+
+
                 } else {
                     nBuilder = NotificationCompat.Builder(context)
-                        .setContentTitle("StudySmart")
+                        .setContentTitle("StudySmart B")
                         .setContentText(desc)
                         .setLargeIcon(BitmapFactory.decodeResource(context?.resources, R.drawable.ic_launcher_foreground))
                         .setSmallIcon(R.drawable.clock_icon)
                         .setContentIntent(pIntent)
+
+                    Log.d("Test", "If statement 3")
+
                 }
 
                 nManager.notify(0, nBuilder.build())
@@ -62,13 +71,16 @@ class BC: BroadcastReceiver() {
 //
                 nBuilder = NotificationCompat.Builder(context, "package com.example.app")
                     .setSmallIcon(R.drawable.clock_icon)
-                    .setContentTitle("StudySmart")
+                    .setContentTitle("StudySmart C")
                     .setContentText(desc)
                     .setPriority(NotificationCompat.PRIORITY_HIGH)
 
                 var compat : NotificationManagerCompat = NotificationManagerCompat.from(context)
 
                 compat.notify(200, nBuilder.build())
+
+                Log.d("Test", "If statement 4")
+
 
             }
 

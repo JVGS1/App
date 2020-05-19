@@ -15,7 +15,6 @@
 <!--        android:src=""-->
 <!--        ></ImageView>-->
 
-
     <TextView
         android:id="@+id/SplashText"
         android:layout_width="155dp"
