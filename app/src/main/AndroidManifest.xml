@@ -19,7 +19,10 @@
         </activity>
         <activity android:name="com.example.app.main.MainPresenterImpl">
         </activity>
-
+        <activity android:name="com.example.app.main.MainStatsImpl">
+        </activity>
+        <activity android:name=".main.activity_timer">
+        </activity>
         <receiver android:name="com.example.app.main.BC">
             <intent-filter>
                 <action android:name="android.media.action.DISPLAY_NOTIFICATION" />

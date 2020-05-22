@@ -19,14 +19,14 @@ interface MvpPresenter {
     }
 
     interface Stats {
-            fun setGoals()
 
             fun getGoals()
 
             fun chartView()
 
             fun currentProgression()
-        }
+        fun setGoals(view: View)
+    }
     }
 
 

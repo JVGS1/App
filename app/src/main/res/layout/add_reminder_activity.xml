@@ -28,7 +28,7 @@
         android:layout_height="148dp"
         android:layout_below="@+id/toolbar"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:background="#A9A9A9"
+        android:background="#2A2A2A"
         android:orientation="vertical"
         >
 

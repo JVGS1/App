@@ -5,6 +5,7 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
 import android.widget.Toast
 
 
@@ -48,10 +49,12 @@ class sqlDatahandler(var context: Context): SQLiteOpenHelper(context, DB_Name, n
         var index = database.insert(ReminderDB, null, content)
 
         if (index == (-1).toLong()) {
-            Toast.makeText(context, "Failed to add data", Toast.LENGTH_SHORT).show()
+            Log.d("Failed", "Unable to add")
         } else {
-            Toast.makeText(context, "SUCCESSFULLY CREATED", Toast.LENGTH_SHORT).show()
+            Log.d("Success", "Successfully added")
         }
+
+        Log.d("database size", reminders.date)
 
         database.close()
     }
@@ -95,7 +98,17 @@ class sqlDatahandler(var context: Context): SQLiteOpenHelper(context, DB_Name, n
 }
 
     fun getSize(): Int {
-        return readReminders().size -1
+        return readReminders().size - 1
     }
+
+    fun logInsert():String {
+        var a : String
+
+        a = colID.toString() + colDate.toString() + colTime.toString() + colDate.toString()
+        return a
+    }
+
+
+
 
 }

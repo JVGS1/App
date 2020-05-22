@@ -3,6 +3,8 @@ package com.example.app.main
 import android.app.*
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -39,7 +41,6 @@ class MainPresenterImpl : MainContract.reminderPresenter, AppCompatActivity() {
     lateinit var aManager: AlarmManager
 
 
-    private val reminder = Reminders()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,7 +63,6 @@ class MainPresenterImpl : MainContract.reminderPresenter, AppCompatActivity() {
 
         aManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
-//        val view = layoutInflater.inflate(R.layout.add_reminder_activity, null)
         val view = View.inflate(context, R.layout.add_reminder_activity,  null)
 
         floatingActionButton.setOnClickListener {
@@ -82,10 +82,11 @@ class MainPresenterImpl : MainContract.reminderPresenter, AppCompatActivity() {
 
 
         dialog = AlertDialog.Builder(this).create()
-        dialog.setTitle("Enter Reminder Details")
+//        dialog.setTitle("Enter Reminder Details")
         dialog.setView(view)
         dialog.show()
         dialog.setCancelable(true)
+         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
 
          dialog.setInverseBackgroundForced(true)
@@ -95,6 +96,7 @@ class MainPresenterImpl : MainContract.reminderPresenter, AppCompatActivity() {
          timeView(view)
 
 
+         val reminder = Reminders()
 
         val date = view.findViewById<TextView>(R.id.dateText)
         val time = view.findViewById<TextView>(R.id.timeText)
@@ -111,12 +113,10 @@ class MainPresenterImpl : MainContract.reminderPresenter, AppCompatActivity() {
                 reminder.time = time.text.toString()
                 reminder.text = text.text.toString()
                 database.insertReminder(reminder)
-                adapter.notifyItemChanged(database.getSize() - 1)
+                adapter.notifyItemChanged(database.getSize())
                 refreshList()
                 dialog.dismiss()
-
                 notifReminder(reminder.text, cal.timeInMillis)
-
             }
         }
     }
@@ -125,8 +125,6 @@ class MainPresenterImpl : MainContract.reminderPresenter, AppCompatActivity() {
 
 
      override fun notifReminder(string: String, setTime: Long) {
-
-
         val intent = Intent(context, BC::class.java)
         intent.putExtra("Reminder", string)
         val pIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
@@ -140,10 +138,19 @@ class MainPresenterImpl : MainContract.reminderPresenter, AppCompatActivity() {
 
 
 
+
+
+
+
+
+
+
+
     override fun updateReminders(reminder: Reminders) {
         val alert = AlertDialog.Builder(this).create()
 
-        alert.setTitle("Update Reminder")
+
+//        alert.setTitle("Update Reminder")
         val view = View.inflate(context, R.layout.add_reminder_activity,  null)
 
 
@@ -155,6 +162,9 @@ class MainPresenterImpl : MainContract.reminderPresenter, AppCompatActivity() {
         val text = view.findViewById<TextView>(R.id.reminderTitle)
 
         alert.setView(view)
+        alert.setCancelable(true)
+
+        alert.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         calendarView(view)
         timeView(view)
@@ -167,7 +177,6 @@ class MainPresenterImpl : MainContract.reminderPresenter, AppCompatActivity() {
                 reminder.time = time.text.toString()
                 reminder.text = text.text.toString()
                 database.updateData(reminder)
-                adapter.notifyItemChanged(database.getSize() - 1)
                 refreshList()
                 notifReminder(reminder.text, cal.timeInMillis)
                 alert.dismiss()
@@ -209,10 +218,6 @@ class MainPresenterImpl : MainContract.reminderPresenter, AppCompatActivity() {
 
                     cal.set(mYear, month, day);
 
-
-//                    cal[Calendar.YEAR] = mYear
-//                    cal[Calendar.MONTH] = mMonth
-//                    cal[Calendar.DAY_OF_WEEK] = mDay
 
                 }, year, month, day)
             dpd.show()

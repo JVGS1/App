@@ -5,4 +5,13 @@
     <string name="reminders">Reminders</string>
     <string name="reminder">Reminder</string>
     <string name="times">Time</string>
+    <string name="cst">CST</string>
+    <string name="tst">TST</string>
+    <string name="target_study_time">Target study time</string>
+    <string name="current_study_time">Current study time</string>
+    <string name="set_current_study_hours_for_this_week">Set current study hours for this week</string>
+    <string name="achivements">Achivements</string>
+    <string name="home">Home</string>
+    <string name="Alarms" />
+    <string name="alarm">Alarm</string>
 </resources>

@@ -11,6 +11,8 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.app.main.MainPresenterImpl
+import com.example.app.main.MainStatsImpl
+import com.example.app.main.activity_timer
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,7 +43,9 @@ class MainActivity : AppCompatActivity() {
         appName.setAnimation(topAnim)
 
         Handler().postDelayed({
-            val intent = Intent(this, MainPresenterImpl::class.java)
+//            val intent = Intent(this, MainPresenterImpl::class.java)
+            val intent = Intent(this, activity_timer::class.java)
+
             startActivity(intent)
             finish()
         }, 3000)

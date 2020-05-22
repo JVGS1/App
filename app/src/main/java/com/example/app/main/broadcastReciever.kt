@@ -19,6 +19,8 @@ class BC: BroadcastReceiver() {
         var nBuilder : NotificationCompat.Builder
         var nManager : NotificationManager
 
+        Log.d("Shit", "Notification 1")
+
 
         val cIntent = Intent(context, LauncherActivity::class.java)
         val pIntent = PendingIntent.getActivity(context, 0, cIntent, PendingIntent.FLAG_UPDATE_CURRENT)
@@ -31,7 +33,6 @@ class BC: BroadcastReceiver() {
 
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ){
 
-                Log.d("Test", "if statement 1")
 
 
                 nChannel = NotificationChannel(
@@ -51,7 +52,6 @@ class BC: BroadcastReceiver() {
                         .setSmallIcon(R.drawable.clock_icon)
                         .setContentIntent(pIntent)
 
-                    Log.d("Test", "If statement 2 ")
 
 
                 } else {
@@ -79,7 +79,6 @@ class BC: BroadcastReceiver() {
 
                 compat.notify(200, nBuilder.build())
 
-                Log.d("Test", "If statement 4")
 
 
             }

@@ -4,9 +4,8 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".reminders"
+        tools:context=".main.MainStatsImpl"
         android:background="@color/yellow">
-
 
 
         <RelativeLayout
@@ -14,89 +13,244 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            app:layout_constraintBottom_toTopOf="@+id/list"
+            app:layout_constraintBottom_toTopOf="@+id/bottomBar"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.005">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:gravity="center"
-                android:padding="16dp" />
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="wrap_content"
+                android:layout_width="304dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginStart="89dp"
-                android:layout_marginLeft="89dp"
-                android:layout_marginTop="17dp"
-                android:layout_marginEnd="80dp"
-                android:layout_marginRight="80dp"
+                android:layout_marginStart="57dp"
+                android:layout_marginLeft="57dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="50dp"
                 android:text="Goals and Progression"
                 android:textColor="#000000"
                 android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:gravity="center"
+                android:padding="16dp" />
         </RelativeLayout>
 
+
     <androidx.cardview.widget.CardView
-        android:layout_width="373dp"
-        android:layout_height="183dp"
+        android:id="@+id/cardView"
+        android:layout_width="351dp"
+        android:layout_height="106dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/empty_view"
-        app:layout_constraintVertical_bias="0.066">
+        app:layout_constraintTop_toTopOf="@+id/empty_view"
+        app:layout_constraintVertical_bias="0.167">
+
+                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+
+
+                                            <androidx.constraintlayout.widget.ConstraintLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent">
+
+                                                <androidx.constraintlayout.widget.ConstraintLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    app:layout_constraintBottom_toBottomOf="parent"
+                                                    app:layout_constraintEnd_toEndOf="parent"
+                                                    app:layout_constraintHorizontal_bias="1.0"
+                                                    app:layout_constraintStart_toStartOf="parent"
+                                                    app:layout_constraintTop_toTopOf="parent"
+                                                    app:layout_constraintVertical_bias="1.0">
+
+
+                                                    <TextView
+                                                        android:id="@+id/textView2"
+                                                        android:layout_width="275dp"
+                                                        android:layout_height="21dp"
+                                                        android:text="Studying Statistics"
+                                                        android:textSize="15sp"
+                                                        app:layout_constraintBottom_toBottomOf="parent"
+                                                        app:layout_constraintEnd_toEndOf="parent"
+                                                        app:layout_constraintHorizontal_bias="0.789"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintTop_toTopOf="parent"
+                                                        app:layout_constraintVertical_bias="0.188">
+
+                                                    </TextView>
+
+                                                    <TextView
+                                                        android:id="@+id/textView3"
+                                                        android:layout_width="125dp"
+                                                        android:layout_height="25dp"
+                                                        android:text="@string/current_study_time"
+                                                        app:layout_constraintBottom_toBottomOf="parent"
+                                                        app:layout_constraintEnd_toEndOf="parent"
+                                                        app:layout_constraintHorizontal_bias="0.065"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintTop_toTopOf="parent"
+                                                        app:layout_constraintVertical_bias="0.597" />
+
+                                                    <TextView
+                                                        android:layout_width="125dp"
+                                                        android:layout_height="25dp"
+                                                        android:text="@string/target_study_time"
+                                                        app:layout_constraintBottom_toBottomOf="parent"
+                                                        app:layout_constraintEnd_toEndOf="parent"
+                                                        app:layout_constraintHorizontal_bias="0.064"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintTop_toTopOf="parent"
+                                                        app:layout_constraintVertical_bias="0.955" />
+
+                                                    <TextView
+                                                        android:id="@+id/CST"
+                                                        android:layout_width="125dp"
+                                                        android:layout_height="25dp"
+                                                        android:text="@string/cst"
+                                                        app:layout_constraintBottom_toBottomOf="parent"
+                                                        app:layout_constraintEnd_toEndOf="parent"
+                                                        app:layout_constraintHorizontal_bias="0.647"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintTop_toTopOf="parent"
+                                                        app:layout_constraintVertical_bias="0.611" />
+
+                                                    <TextView
+                                                        android:id="@+id/TST"
+                                                        android:layout_width="125dp"
+                                                        android:layout_height="25dp"
+                                                        android:text="@string/tst"
+                                                        app:layout_constraintBottom_toBottomOf="parent"
+                                                        app:layout_constraintEnd_toEndOf="parent"
+                                                        app:layout_constraintHorizontal_bias="0.649"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintTop_toTopOf="parent"
+                                                        app:layout_constraintVertical_bias="0.949" />
+
+                                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="352dp"
+        android:layout_height="166dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.632">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barGraph"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0">
+                app:layout_constraintTop_toTopOf="parent">
 
-                <androidx.appcompat.widget.AppCompatSeekBar
-                    android:id="@+id/appCompatSeekBar"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.192" />
 
-                <TextView
-                    android:layout_width="273dp"
-                    android:layout_height="29dp"
-                    android:text="Set current study hours for this week"
-                    android:textSize="15sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/appCompatSeekBar"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.183">
-
-                </TextView>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.github.mikephil.charting.charts.BarChart>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     </androidx.cardview.widget.CardView>
 
+    <me.ibrahimsn.lib.SmoothBottomBar
+        android:id="@+id/bottomBar"
+        android:layout_width="413dp"
+        android:layout_height="47dp"
+        app:backgroundColor="#2A2A2A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list"
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/menu_drawer" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="350dp"
+        android:layout_height="121dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/empty_view"
+        app:layout_constraintVertical_bias="0.425">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+
+                                    <androidx.appcompat.widget.AppCompatSeekBar
+                                        android:id="@+id/appCompatSeekBar"
+                                        android:layout_width="335dp"
+                                        android:layout_height="24dp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0.533"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.494" />
+
+                                    <TextView
+                                        android:id="@+id/sliderText"
+                                        android:layout_width="249dp"
+                                        android:layout_height="19dp"
+                                        android:text="@string/set_current_study_hours_for_this_week"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0.45"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.11" />
+
+                                    <Button
+                                        android:id="@+id/seekButton"
+                                        android:layout_width="91dp"
+                                        android:layout_height="39dp"
+                                        android:background="@drawable/button"
+                                        android:clickable="true"
+                                        android:focusable="true"
+                                        android:onClick="setGoals"
+                                        android:text="set"
+                                        android:textColor="#FFFFFF"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0.464"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.965"
+                                        style="?android:attr/borderlessButtonStyle"/>
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
